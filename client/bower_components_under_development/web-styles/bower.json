@@ -1,0 +1,10 @@
+{
+  "name": "web-styles",
+  "version": "0.0.0",
+  "authors": [
+    "'BerndWessels' <wesselsbernd@gmail.com>"
+  ],
+  "description": "Re-usable styles.",
+  "license": "MIT",
+  "private": true
+}

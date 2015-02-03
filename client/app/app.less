@@ -1,0 +1,26 @@
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+@font-face {
+  font-family: 'ui-grid' !important;
+  src: url('/assets/fonts/ui-grid.eot') !important;
+  src: url('/assets/fonts/ui-grid.eot#iefix') format('embedded-opentype'), url('/assets/fonts/ui-grid.woff') format('woff'), url('/assets/fonts/ui-grid.ttf?') format('truetype'), url('/assets/fonts/ui-grid.svg?#ui-grid') format('svg') !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'home/home.less';
+@import 'modal/modal.less';
+@import 'authorization/accounts/accounts.less';
+@import 'authentication/notLoggedIn/notLoggedIn.less';
+// endinjector

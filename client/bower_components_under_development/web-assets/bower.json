@@ -1,0 +1,10 @@
+{
+  "name": "web-assets",
+  "version": "0.0.0",
+  "authors": [
+    "'BerndWessels' <wesselsbernd@gmail.com>"
+  ],
+  "description": "Re-usable assets.",
+  "license": "MIT",
+  "private": true
+}
