@@ -8,7 +8,15 @@ Based on this boilerplate it is easy to start a AngularJS Single Page Website th
 
 ### Getting Started
 
-Simply fork and then clone the web-auth, web-api and web-site repositories.
+#### Repositories
+
+Simply fork and then clone the following repositories.
+
+    web-auth
+    web-api
+    web-site
+
+#### Prerequisites
 
 Obviously you need to install NodeJS.
 
