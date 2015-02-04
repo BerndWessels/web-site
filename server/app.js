@@ -32,6 +32,8 @@ var app = express();
 var env = app.get('env');
 // Set the listening port.
 app.set('port', config.port);
+// Avoid a bug.
+app.set('view engine', 'ejs');
 
 /**
  * Add the common middleware.
@@ -47,7 +49,7 @@ if (env === 'production') {
   // Serve the favicon.
   app.use(serveFavicon(path.join(config.root, 'public', 'favicon.ico')));
   // Serve static files.
-  app.use('/app', express.static(path.join(config.root, 'public'), staticConfig));
+  app.use(express.static(path.join(config.root, 'public'), staticConfig));
   // Set the application path to the public folder.
   app.set('appPath', path.join(config.root, 'public'));
 }
