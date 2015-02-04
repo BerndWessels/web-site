@@ -104,7 +104,7 @@ Once you are ready to distribute your website you run the build grunt task for t
 
 This will create the dist folder within the web-site folder. You can then take it and copy it to your CDN.
 
-Obvioulsy you still have to distribute and run the Authentication and API Servers.
+Obvioulsy you still have to distribute and run the Authentication and API Servers as well as Redis and your own dependencies.
 
 ### Yeoman Angular Fullstack
 
