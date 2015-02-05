@@ -30,7 +30,7 @@
         // Store the new access token.
         authenticationService.setAccessToken(accessToken);
         // Redirect to the main state.
-        $state.go('main');
+        $state.go('home');
       },
       // Failure.
       function (/* status */) {
