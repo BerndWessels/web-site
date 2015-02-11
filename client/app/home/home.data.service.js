@@ -33,11 +33,11 @@
       var deferred = $q.defer();
       // Usually you would get the data here via AJAX call to an API.
       $http.get(coreService.getApiBaseUrl() + '/api/home/stuff').
-        success(function(data, status, headers, config) {
+        success(function(data/*, status, headers, config*/) {
           // this callback will be called asynchronously when the response is available
           deferred.resolve(data);
         }).
-        error(function(data, status, headers, config) {
+        error(function(data, status/*, headers, config*/) {
           // called asynchronously if an error occurs or server returns response with an error status.
           deferred.reject(status);
         }

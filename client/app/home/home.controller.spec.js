@@ -1,28 +1,68 @@
+/**
+ * Home Controller Tests.
+ */
 'use strict';
 
-describe('Controller: HomeCtrl', function () {
+describe('Controller: app.home.homeController', function () {
 
-  // load the controller's module
-  beforeEach(module('app'));
+  // Define the Angular services used by this test suite.
+  var $controller, $q, $rootScope;
 
-  var HomeCtrl,
-      scope,
-      $httpBackend;
+  // Called before each test. Initialises the Angular services used by this test suite,
+  // and generates the mock services/dependencies used by the tests.
+  beforeEach(function () {
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
-    $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/things')
-      .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
+    // Specify the module of the functionality to test.
+    module('app.home');
 
-    scope = $rootScope.$new();
-    HomeCtrl = $controller('HomeCtrl', {
-      $scope: scope
+    // Initialises the Angular services used by this test suite.
+    inject(function (_$controller_, _$q_, _$rootScope_) {
+      $controller = _$controller_;
+      $q = _$q_;
+      $rootScope = _$rootScope_;
     });
-  }));
-
-  it('should attach a list of things to the scope', function () {
-    $httpBackend.flush();
-    expect(scope.awesomeThings.length).toBe(4);
   });
+
+  describe('The controller ', function () {
+
+    it('should be instantiated', function () {
+      // Arrange.
+      var mocks = getMocks();
+      var controller = mocks.getControllerToTest();
+
+      // Assert.
+      expect(controller).toBeTruthy();
+    });
+  });
+
+  // Creates the mock services/dependencies and defines their mock functions.
+  function getMocks() {
+
+    // Contains the mock services/dependencies used by the tests.
+    var mocks = {
+      mockHomeDataService: {},
+      getControllerToTest: getControllerToTest
+    };
+
+    // Create mock services/dependencies and define their mock functions.
+    mocks.mockHomeDataService = jasmine.createSpyObj('homeDataService', ['getStuff']);
+
+    // Define default return values for the mock functions.
+    var getStuffPromise = $q.when({
+      something: 'whatever'
+    });
+    mocks.mockHomeDataService.getStuff.and.returnValue(getStuffPromise);
+
+    /// Returns the controller to test, injected with the mocked services/dependencies.
+    function getControllerToTest() {
+
+      var controller = $controller('app.home.homeController', {
+        homeDataService: mocks.mockHomeDataService
+      });
+
+      return controller;
+    }
+
+    return mocks;
+  }
 });

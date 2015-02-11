@@ -46,7 +46,7 @@
       // Return if there is no access token.
       if (!accessToken) {
         getAccessTokenQueue.forEach(function(promise){
-          deferred.reject(null);
+          promise.reject(null);
         });
         getAccessTokenQueue = [];
       }

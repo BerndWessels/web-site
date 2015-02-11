@@ -11,18 +11,24 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      // Copy these from the injection in index.html.
       'client/bower_components/jquery/dist/jquery.js',
       'client/bower_components/angular/angular.js',
-      'client/bower_components/angular-mocks/angular-mocks.js',
-      'client/bower_components/angular-resource/angular-resource.js',
-      'client/bower_components/angular-cookies/angular-cookies.js',
-      'client/bower_components/angular-sanitize/angular-sanitize.js',
       'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'client/bower_components/lodash/dist/lodash.compat.js',
-      'client/bower_components/angular-ui-router/release/angular-ui-router.js',
-      'client/bower_components/angular-ui-grid/ui-grid.js',
+      'client/bower_components/angular-cookies/angular-cookies.js',
+      'client/bower_components/angular-resource/angular-resource.js',
+      'client/bower_components/angular-sanitize/angular-sanitize.js',
       'client/bower_components/angular-translate/angular-translate.js',
       'client/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+      'client/bower_components/angular-ui-grid/ui-grid.js',
+      'client/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'client/bower_components/angular-jwt/dist/angular-jwt.js',
+      'client/bower_components/a0-angular-storage/dist/angular-storage.js',
+      'client/bower_components/lodash/dist/lodash.compat.js',
+      'client/bower_components/angular-local-storage/dist/angular-local-storage.js',
+      // This is mocking angular for testing.
+      'client/bower_components/angular-mocks/angular-mocks.js',
+      // Make sure this covers all your code.
       'client/app/**/*.module.js',
       'client/app/**/*.js',
       'client/components/**/*.js',

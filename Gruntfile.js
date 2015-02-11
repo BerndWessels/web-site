@@ -465,7 +465,8 @@ module.exports = function (grunt) {
     karma: {
       unit: {
         configFile: 'karma.conf.js',
-        singleRun: true
+        singleRun: true,
+        debug: true
       }
     },
 
@@ -725,7 +726,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'ngtemplates',
     'concat',
-    'ngAnnotate',
+    // 'ngAnnotate', // Does not support namespace injection. We better use John Papa style injection.
     'copy:dist',
     'cdnify',
     'cssmin',

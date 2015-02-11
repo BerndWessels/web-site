@@ -31,7 +31,7 @@
     vm.redirectToLogin = function () {
       // Redirect.
       $window.location = coreService.getLoginUrl();
-    }
+    };
   }
 
 })();
