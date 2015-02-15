@@ -10,11 +10,11 @@
   angular.module('app.core', [
       // Angular modules.
       'ngCookies',
+      'ngMaterial',
       'ngResource',
       'ngSanitize',
       // 3rd-party modules.
       'angular-jwt',
-      'angular-storage',
       'LocalStorageModule',
       'pascalprecht.translate',
       'ui.bootstrap',
